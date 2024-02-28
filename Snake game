@@ -1,0 +1,29 @@
+from turtle import Screen,  Turtle
+import turtle
+import time
+screen=Screen()
+screen.setup(width=600,height=600)
+screen.bgcolor("pink")
+screen.title("snake game")
+screen.tracer(0)
+# tracer mainy turn on and off the animation , we have to put the value to 0 to turn off the tracer
+starting_position=[(0,0),(-20,0),(-40,0)]
+
+segment=[]
+for items in starting_position:
+    new_segment=Turtle("square")
+    new_segment.color("purple")
+    new_segment.penup()
+    new_segment.goto(items)
+    segment.append(new_segment)
+    
+game_is_on=True
+while game_is_on:
+    screen.update()#update is used  for the new location of the block 
+    time.sleep(0.1)#it basically add 1 sec delay after each segment moved
+    for seg_num in range(len(segment)-1,0,-1):# in range the sequence are start stop and step ,for start we are foloowing the 1st block , the stop is 0 and the step are always -1
+        new_x=segment[seg_num-1].xcor()#to give coordinate  in x  and yaxis
+        new_y=segment[seg_num-1].ycor()
+        segment[seg_num].goto(new_x,new_y)#we are giving info to the block to go in a giver cordinates
+    segment[0].forward(20)
+    segment[0].left(45)
