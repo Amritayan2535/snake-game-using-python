@@ -27,3 +27,4 @@ while game_is_on:
         segment[seg_num].goto(new_x,new_y)#we are giving info to the block to go in a giver cordinates
     segment[0].forward(20)
     segment[0].left(45)
+    segment[0].left()
