@@ -28,5 +28,5 @@ while game_is_on:
     segment[0].forward(20)
     segment[0].left(45)
 
-#idont know when i am going to finish this file 
+#idont know when i am going to finish this file just try to finish early 
     segment[0].left()
